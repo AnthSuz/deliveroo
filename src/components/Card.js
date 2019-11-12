@@ -1,9 +1,40 @@
 import React from "react";
-
-const Card = () => {
+import Icon from "./Icon";
+const Card = props => {
   return (
     <>
-      <p>Card</p>
+      <div className="menu-section">
+        {props.section[props.category].map(meal => {
+          return (
+            <div key={meal.id} className="menuItem">
+              <div className="card">
+                <div className="card_text">
+                  <h3>{meal.title}</h3>
+                  <p className="card_description">
+                    {meal.description === undefined ? null : meal.description}
+                  </p>
+                  <div className="align_price_popular">
+                    <p className="card_price">{meal.price} €</p>
+                    <p>
+                      {meal.popular === true ? (
+                        <span className="card_popular">
+                          <Icon />
+                          Populaire
+                        </span>
+                      ) : null}{" "}
+                    </p>
+                  </div>
+                </div>
+                <div className="card_img">
+                  {meal.picture === undefined ? null : (
+                    <img src={meal.picture} alt="kiff" />
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
