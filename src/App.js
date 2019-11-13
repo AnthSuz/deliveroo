@@ -11,6 +11,49 @@ import Section from "./components/Section";
 function App() {
   const [top, setTop] = useState([]);
   const [section, setSection] = useState([]);
+  const [product, setProduct] = useState([]);
+  const [total, setTotal] = useState(2.5);
+
+  const quantityAdd = item => {
+    console.log("quantityAdd");
+    console.log(item);
+    const newProduct = [...product];
+
+    let isFound = false;
+
+    for (let i = 0; i < newProduct.length; i++) {
+      if (newProduct[i].id === item.id) {
+        newProduct[i].quantity = newProduct[i].quantity + 1;
+        isFound = true;
+        break;
+      }
+    }
+
+    if (isFound === false) {
+      item.quantity = 1;
+      newProduct.push(item);
+    }
+
+    setProduct(newProduct);
+  };
+
+  const quantityDecrease = item => {
+    console.log("quantityDecrease");
+    console.log(item);
+    const newProduct = [...product];
+
+    for (let i = 0; i < newProduct.length; i++) {
+      if (newProduct[i].id === item.id) {
+        newProduct[i].quantity = newProduct[i].quantity - 1;
+        if (newProduct[i].quantity === 0) {
+          newProduct.splice(i, 1);
+        }
+        break;
+      }
+    }
+
+    setProduct(newProduct);
+  };
 
   const fetchData = async () => {
     try {
@@ -29,9 +72,12 @@ function App() {
     <>
       <Header />
       <Top name={top.name} description={top.description} photo={top.picture} />
-      <div className="menu">
-        <Section section={section} />
-      </div>
+      <Section
+        section={section}
+        product={product}
+        quantityDecrease={quantityDecrease}
+        quantityAdd={quantityAdd}
+      />
     </>
   );
 }

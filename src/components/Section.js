@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import Product from "./Product";
 
 const Section = props => {
   return (
@@ -12,11 +13,21 @@ const Section = props => {
                 <div key={index} className="menu">
                   <h2>{category}</h2>
 
-                  <Card category={category} section={props.section} />
+                  <Card
+                    category={category}
+                    section={props.section}
+                    product={props.product}
+                    quantityAdd={props.quantityAdd}
+                  />
                 </div>
               );
             })}
           </div>
+          <Product
+            product={props.product}
+            quantityDecrease={props.quantityDecrease}
+            quantityAdd={props.quantityAdd}
+          />
         </div>
       </section>
     </>

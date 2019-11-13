@@ -7,6 +7,8 @@
 
 .wrapper {
   width: 1200px;
+  flex-direction: row;
+  display: flex;
 }
 
 .wrapper_inside {
@@ -99,7 +101,7 @@ h3 {
 
 .card {
   border-radius: 5px;
-  height: 160px;
+  height: 130px;
   background: #fff;
   padding: 15px;
   display: flex;
@@ -135,4 +137,133 @@ h3 {
 
 .menu-section h3 {
   margin-bottom: 8px;
+  font-weight: 400;
+}
+
+button {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  background: #bac3c3;
+  color: #8b9a9b;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+.green {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  background: #00cdbd;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: not-allowed;
+}
+
+.product_align {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+  margin: 15px 0 0 20px;
+  background-color: white;
+  height: fit-content;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+}
+
+.product_content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panier--vide {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.product_test {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.product_quantity {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: #808484;
+}
+
+.product_reste {
+  width: 200px;
+}
+
+.product--price {
+  width: 50%;
+  text-align: right;
+}
+
+.product--price--total {
+  width: 100%;
+  text-align: right;
+}
+
+.product--price--sous-total {
+  width: 100%;
+  text-align: right;
+}
+
+.product_total {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.3rem 0;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2e3333;
+  font-size: 1.2rem;
+  border-top: 1px solid grey;
+}
+
+.product_align_green {
+  max-height: 300px;
+  overflow-y: auto !important;
+}
+
+.sous-total {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.3rem 0;
+  margin-left: 10px;
+  font-weight: 400;
+  color: #2e3333;
+  font-size: 16px;
+  border-top: 1px solid grey;
+}
+
+.test-ss-total {
+  display: flex;
+  justify-content: space-between;
+}
+.test-ss-total p {
+  padding: 0.5rem 0;
+  margin: 0px;
+}
+
+.plus {
+  margin-left: 3px;
+}
+
+.moins {
+  margin-right: 3px;
+}
+
+.ss-total-total {
+  padding-bottom: 10px;
+  border-top: 1px solid grey;
 }
