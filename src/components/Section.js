@@ -9,18 +9,22 @@ const Section = props => {
         <div className="wrapper">
           <div className="wrapper_inside">
             {Object.keys(props.section).map((category, index) => {
-              return (
-                <div key={index} className="menu">
-                  <h2>{category}</h2>
+              if (props.section[category].length > 0) {
+                return (
+                  <div key={index} className="menu">
+                    <h2>{category}</h2>
 
-                  <Card
-                    category={category}
-                    section={props.section}
-                    product={props.product}
-                    quantityAdd={props.quantityAdd}
-                  />
-                </div>
-              );
+                    <Card
+                      category={category}
+                      section={props.section}
+                      product={props.product}
+                      quantityAdd={props.quantityAdd}
+                    />
+                  </div>
+                );
+              } else {
+                return null;
+              }
             })}
           </div>
           <Product
