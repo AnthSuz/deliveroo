@@ -12,7 +12,15 @@ function App() {
   const [top, setTop] = useState([]);
   const [section, setSection] = useState([]);
   const [product, setProduct] = useState([]);
-  const [total, setTotal] = useState(2.5);
+  const [tip, setTip] = useState(1.0);
+
+  const tipAdd = () => {
+    setTip(tip + 0.5);
+  };
+
+  const tipDecrease = () => {
+    setTip(tip - 0.5);
+  };
 
   const quantityAdd = item => {
     console.log("quantityAdd");
@@ -77,6 +85,9 @@ function App() {
         product={product}
         quantityDecrease={quantityDecrease}
         quantityAdd={quantityAdd}
+        tip={tip}
+        tipDecrease={tipDecrease}
+        tipAdd={tipAdd}
       />
     </>
   );

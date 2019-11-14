@@ -161,7 +161,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   border: none;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .product_align {
@@ -231,8 +231,27 @@ button {
 }
 
 .product_align_green {
-  max-height: 300px;
-  overflow-y: auto !important;
+  max-height: 290px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.product_align_green::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.product_align_green::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.product_align_green::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.product_align_green::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sous-total {
@@ -266,4 +285,10 @@ button {
 .ss-total-total {
   padding-bottom: 10px;
   border-top: 1px solid grey;
+}
+
+.counter_tips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

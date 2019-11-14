@@ -42,7 +42,7 @@ const Product = props => {
       sousTotal =
         sousTotal + props.product[i].price * props.product[i].quantity;
     }
-    return toto ? sousTotal + toto : sousTotal;
+    return toto ? sousTotal + toto + props.tip : sousTotal;
   };
 
   return (
@@ -61,6 +61,31 @@ const Product = props => {
               <div className="test-ss-total">
                 <p>Frais de livraison</p>
                 <p>2,50 €</p>
+              </div>
+              <div className="test-ss-total">
+                <p>Tips</p>
+                <div className="counter_tips">
+                  {props.tip !== 0 ? (
+                    <span
+                      onClick={() => {
+                        props.tipDecrease();
+                      }}
+                    >
+                      <Moins />
+                    </span>
+                  ) : (
+                    alert("Donne un pourboir crevard")
+                  )}
+
+                  <p>{props.tip}</p>
+                  <span
+                    onClick={() => {
+                      props.tipAdd();
+                    }}
+                  >
+                    <Plus />
+                  </span>
+                </div>
               </div>
             </div>
 

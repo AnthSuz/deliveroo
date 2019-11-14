@@ -27,6 +27,9 @@ const Section = props => {
             product={props.product}
             quantityDecrease={props.quantityDecrease}
             quantityAdd={props.quantityAdd}
+            tip={props.tip}
+            tipDecrease={props.tipDecrease}
+            tipAdd={props.tipAdd}
           />
         </div>
       </section>
