@@ -73,9 +73,7 @@ const Product = props => {
                     >
                       <Moins />
                     </span>
-                  ) : (
-                    alert("Donne un pourboir crevard")
-                  )}
+                  ) : null}
 
                   <p>{props.tip}</p>
                   <span
